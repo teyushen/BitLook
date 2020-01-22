@@ -35,7 +35,7 @@ module.exports = {
 
     /**
      *
-     * @param params eg: {symbol: 'XBTUSD'}
+     * @param params eg: {symbol: 'XBTUSD', filter: {open: true}}
      * @returns {Promise<any>}
      */
     getOrder: function (params) {
@@ -59,6 +59,11 @@ module.exports = {
         return success;
     },
 
+    /**
+     *
+     * @param data {symbol: 'XBTUSD'}
+     * @returns {Promise<boolean>}
+     */
     getPosition: function (params) {
         let subPath = '/api/v1/position' + (params ? "?" + queryString.stringify(params) : '');
         let options = prepareOptions('GET', subPath);

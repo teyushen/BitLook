@@ -7,11 +7,11 @@ const btse = require('./btse/btseV2');
 // bitMex.getOrder({symbol: 'XBTUSD'}).then(resp => console.log(resp));
 
 
-// setInterval(function () {
-//     btse.getWallet({wallet: 'CROSS@'}).then(resp => console.log(resp));
-//     btse.getOpenOrder({symbol: 'BTCPFC'}).then(resp => console.log(resp));
-//     btse.getPosition({symbol: 'BTCPFC'}).then(resp => console.log(resp));
-// }, 100);
+setInterval(function () {
+    btse.getWallet({wallet: 'CROSS@'}).then(resp => console.log(resp));
+    btse.getOpenOrder({symbol: 'BTCPFC'}).then(resp => console.log(resp));
+    btse.getPosition({symbol: 'BTCPFC'}).then(resp => console.log(resp));
+}, 200);
 
 btse.createOrder({
     "size": 1,

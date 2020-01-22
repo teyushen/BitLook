@@ -9,10 +9,9 @@
   "author": "DennisShen",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^3.0.0",
     "crypto-js": "^3.1.9-1",
-    "query-string": "^6.9.0",
     "request": "^2.88.0",
-    "string-format": "^2.0.0"
+    "simple-node-logger": "^18.12.24",
+    "websocket": "^1.0.31"
   }
 }

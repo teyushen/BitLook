@@ -59,8 +59,18 @@ module.exports = {
         let options = prepareOptions('POST', subPath, null, body);
 
         return respPromise(options);
-
     },
+
+    /**
+     * symbol: BTCPFC, orderID: 6525e1a4-570b-4489-b913-545eeca2ca9d
+     * @returns {Promise<unknown>} eg: {symbol: 'BTCPFC', orderID: '6525e1a4-570b-4489-b913-545eeca2ca9d'}
+     */
+    cancelOrder: function(params) {
+        let subPath = '/api/v2/order';
+        let options = prepareOptions('DELETE', subPath, params);
+
+        return respPromise(options);
+    }
 
 }
 

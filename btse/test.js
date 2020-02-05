@@ -15,7 +15,7 @@ btseWebsocket.init();
 run();
 async function run() {
     log.info('begin test');
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
         await sleep(400);
 
         // if(i%10 === 0) {

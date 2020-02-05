@@ -4,11 +4,7 @@
 
 node_modules/**
 package-lock.json
-<<<<<<< HEAD
-**/*.log
 
-
-=======
+#log/*.log
 **/.DS_Store
->>>>>>> 371ab900b500db22f9109db2298b0f64ff6467be
 

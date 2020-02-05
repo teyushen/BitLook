@@ -1,0 +1,5 @@
+12:46:37.787 INFO  begin test 
+12:46:37.916 INFO  WebSocket Client Connected 
+12:46:37.920 INFO  UNLOGIN_USER connect success 
+12:46:38.189 INFO  orderIds: {}, btseWebsocket.delObj: [] 
+12:46:38.374 INFO  dennisshen is authenticated successfully 

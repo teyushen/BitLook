@@ -24,6 +24,20 @@ module.exports = {
     },
 
     /**
+     * symbol: BTCPFC
+     *
+     * @param params eg: {symbol: 'BTCPFC'}
+     * @returns {Promise<unknown>}
+     */
+    getMargin: function (params) {
+        let subPath = '/api/v2/user/margin';
+        let options = prepareOptions('GET', subPath, params);
+
+        return respPromise(options);
+
+    },
+
+    /**
      * symbol: BTCPFC, BTCF20
      * @param params eg: {symbol: 'BTCPFC'}
      * @returns {Promise<unknown>}
@@ -68,6 +82,14 @@ module.exports = {
     cancelOrder: function(params) {
         let subPath = '/api/v2/order';
         let options = prepareOptions('DELETE', subPath, params);
+
+        return respPromise(options);
+    },
+
+    setLeverage: function(body) {
+        let subPath = '/api/v2/leverage'
+
+        let options = prepareOptions('POST', subPath, null, body);
 
         return respPromise(options);
     }

@@ -121,6 +121,7 @@ function prepareOptions(verb, subPath, params, body) {
     let btseSign = CryptoJS.HmacSHA384(path, btseSecret).toString();
     let url = btseUrl + "/futures" + subPath + (params ? "?" + queryString.stringify(params) : '');
 
+    // console.log(path);
     let options = {
         method: verb,
         url: url,
@@ -133,5 +134,6 @@ function prepareOptions(verb, subPath, params, body) {
         body: body,
     };
 
+    // console.log(options);
     return options;
 }

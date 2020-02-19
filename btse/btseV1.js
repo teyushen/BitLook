@@ -32,6 +32,14 @@ module.exports = {
 
     },
 
+    getMargin: function (params) {
+        let subPath = '/futures/api/v1/margin';
+        let options = prepareOptions('GET', subPath, params);
+
+        return respPromise(options);
+
+    },
+
     getOpenOrder: function (params) {
         let subPath = '/futures/api/v1/all_open_orders';
         let options = prepareOptions('GET', subPath, params);

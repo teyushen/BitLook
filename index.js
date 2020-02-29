@@ -8,25 +8,18 @@ const btse = require('./btse/btseV2');
 // bitMex.createOrder({symbol: 'XBTUSD', orderQty: 20}).then(resp => console.log(resp));
 // bitMex.getOrder({symbol: 'XBTUSD', filter: JSON.stringify({open: true})}).then(resp => console.log(resp));
 // bitMex.getPosition({symbol: 'XBTUSD'}).then(resp => console.log(resp));
-bitMex.closePosition({symbol: 'XBTUSD'}).then(resp => console.log(resp));
+// bitMex.closePosition({symbol: 'XBTUSD'}).then(resp => console.log(resp));
 
-setInterval(function () {
-    btse.getWallet({wallet: 'CROSS@'}).then(resp => console.log(resp));
-    btse.getOpenOrder({symbol: 'BTCPFC'}).then(resp => console.log(resp));
-    btse.getPosition({symbol: 'BTCPFC'}).then(resp => console.log(resp));
-}, 200);
+// btse.getOrderBook({symbol: 'BTCPFC', depth: 1}).then(resp => console.log(resp));
+// btse.getWallet({wallet: 'CROSS@'}).then(resp => console.log(resp));
+// btse.getOpenOrder({symbol: 'BTCPFC'}).then(resp => console.log(resp)).catch(e => e);
+// btse.getPosition({symbol: 'BTCPFC'}).then(resp => console.log(resp));
+btse.closePosition({symbol: "BTCPFC", type: 'MARKET'}).then(resp => console.log(resp));
 
 // btse.createOrder({
 //     "size": 1,
-//     "price": 6000,
+//     "price": 8000,
 //     "side": "BUY",
-//     "time_in_force": "GTC",
-//     "type": "OCO",
 //     "symbol": "BTCPFC",
-//     "txType": "STOP",
-//     "postOnly": false,
-//     "reduceOnly": false,
-//     "triggerPrice": 10000,
-//     "stopPrice": 10000,
-//     "trailValue": 0
+//     "type": "LIMIT"
 // }).then(resp => console.log(resp)).catch(e => e);

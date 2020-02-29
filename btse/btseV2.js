@@ -10,6 +10,18 @@ let btseSecret = settings.BTSE.btseSecret;
 module.exports = {
 
     /**
+     *
+     * @param params eg: {symbol: 'BTCPFC', depth: 1}
+     * @returns {Promise<any>}
+     */
+    getOrderBook: function (params) {
+        let subPath = '/api/v2/orderbook/L2';
+        let options = prepareOptions('GET', subPath, params);
+
+        return respPromise(options);
+    },
+
+    /**
      * wallet: CROSS@, ISOLATED@BTCPFC-USD
      *
      * @param params eg: {wallet: 'CROSS@'}
@@ -92,8 +104,18 @@ module.exports = {
         let options = prepareOptions('POST', subPath, null, body);
 
         return respPromise(options);
-    }
+    },
 
+    /**
+     * symbol: BTCPFC, type: LIMIT/MARKET
+     * @returns {Promise<unknown>} eg: {symbol: 'LTCPFC', type: 'MARKET'}
+     */
+    closePosition: function(body) {
+        let subPath = '/api/v2/order/close_position';
+        let options = prepareOptions('POST', subPath, null, body);
+
+        return respPromise(options);
+    },
 }
 
 function respPromise(options) {
